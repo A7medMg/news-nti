@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:news/core/data/api_manager.dart';
 import 'package:news/core/routing/routes_name.dart';
 import 'package:news/core/theming/app_theming.dart';
 
 import 'core/routing/app_routes.dart';
 
 void main() {
+
   runApp(const MyApp());
 }
 
@@ -16,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: AppTheming.darkTheme,
       initialRoute:RoutesName.home,
       onGenerateRoute: AppRoutes.generateRoute,
