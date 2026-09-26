@@ -9,6 +9,9 @@ class AppTheming {
       centerTitle: true,
       backgroundColor: AppColors.appBarr,
       titleTextStyle: AppTextStyles.bold22Withe,
+      iconTheme: IconThemeData(
+        color: Color(0xffFFFFFF)
+      )
     ),
     textTheme: TextTheme(
 
