@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:news/features/home/data/model/news_model.dart';
 import 'package:news/core/routing/routes_name.dart';
+import 'package:news/features/home/domain/entities/news_model_entity.dart';
 
 import 'custom_container_image.dart';
 
 class ArticlesItem extends StatelessWidget {
   const ArticlesItem({super.key, required this.articles, });
- final Articles articles;
+ final ArticlesEntity articles;
 
 
   @override
@@ -24,7 +24,7 @@ class ArticlesItem extends StatelessWidget {
             const SizedBox(height: 5,),
             Text("Europe",style: Theme.of(context).textTheme.titleSmall,),
             const SizedBox(height: 6,),
-            Text(articles.title??"",style: Theme.of(context).textTheme.titleMedium,overflow: .ellipsis,maxLines: 1,),
+            Text(articles.title,style: Theme.of(context).textTheme.titleMedium,overflow: .ellipsis,maxLines: 1,),
 
           ],
         ),

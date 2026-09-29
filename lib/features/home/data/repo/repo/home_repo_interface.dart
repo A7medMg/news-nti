@@ -1,6 +1,0 @@
-import 'package:news/core/utils/api_result.dart';
-import 'package:news/features/home/data/model/news_model.dart';
-
-abstract interface class HomeRepoInterface {
-  Future<ApiResult<NewsModel>> getData();
-}
