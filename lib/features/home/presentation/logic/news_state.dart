@@ -1,5 +1,5 @@
 
-import 'package:news/core/data/news_model.dart';
+import 'package:news/features/home/data/model/news_model.dart';
 
 abstract class NewsState {}
 

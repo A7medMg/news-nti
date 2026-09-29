@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news/core/data/api_manager.dart';
 import 'package:news/core/routing/routes_name.dart';
 import 'package:news/core/theming/app_theming.dart';
 
