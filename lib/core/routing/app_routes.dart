@@ -5,6 +5,7 @@ import 'package:news/features/home/data/api/home_api_imp.dart';
 import 'package:news/features/home/data/repo/data_soruce/data_source_imp.dart';
 import 'package:news/features/home/data/repo/repo/home_repo_imp.dart';
 import 'package:news/features/home/domain/entities/news_model_entity.dart';
+import 'package:news/features/home/domain/use_cases/get_news_use_case.dart';
 import 'package:news/features/home/presentation/logic/news_cubit.dart';
 
 import '../../features/home/presentation/view/screens/details_screen.dart';
@@ -16,7 +17,7 @@ class AppRoutes {
       case RoutesName.home:
         return MaterialPageRoute(
           builder: (_) =>  BlocProvider(
-            create: (context) => NewsCubit(HomeRepoImp(DataSourceImp(HomeApiImp())))..getArticles(),
+            create: (context) => NewsCubit(GetNewsUseCase(HomeRepoImp(DataSourceImp(HomeApiImp()))))..getArticles(),
             child: HomeScreen(),
           ),
         );
