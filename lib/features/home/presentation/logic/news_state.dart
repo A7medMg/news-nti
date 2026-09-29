@@ -1,11 +1,11 @@
 
-import 'package:news/features/home/data/model/news_model.dart';
+import 'package:news/features/home/domain/entities/news_model_entity.dart';
 
 abstract class NewsState {}
 
  class NewsLoading extends NewsState {}
 class NewsSuccess extends NewsState {
- final List<Articles> articles;
+ final List<ArticlesEntity> articles;
  NewsSuccess(this.articles);
 }
 class NewsError extends NewsState{

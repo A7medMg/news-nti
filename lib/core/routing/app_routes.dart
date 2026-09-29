@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/core/routing/routes_name.dart';
+import 'package:news/features/home/data/api/home_api_imp.dart';
 import 'package:news/features/home/data/repo/data_soruce/data_source_imp.dart';
 import 'package:news/features/home/data/repo/repo/home_repo_imp.dart';
+import 'package:news/features/home/domain/entities/news_model_entity.dart';
 import 'package:news/features/home/presentation/logic/news_cubit.dart';
 
 import '../../features/home/presentation/view/screens/details_screen.dart';
 import '../../features/home/presentation/view/screens/home_screen.dart';
-import '../../features/home/data/model/news_model.dart';
 
 class AppRoutes {
   static Route? generateRoute(RouteSettings settings) {
@@ -15,12 +16,12 @@ class AppRoutes {
       case RoutesName.home:
         return MaterialPageRoute(
           builder: (_) =>  BlocProvider(
-            create: (context) => NewsCubit(HomeRepoImp(DataSourceImp()))..getArticles(),
+            create: (context) => NewsCubit(HomeRepoImp(DataSourceImp(HomeApiImp())))..getArticles(),
             child: HomeScreen(),
           ),
         );
       case RoutesName.details:
-        final article = settings.arguments as Articles;
+        final article = settings.arguments as ArticlesEntity;
         return MaterialPageRoute(
           builder: (_) => DetailsScreen(article: article),
         );

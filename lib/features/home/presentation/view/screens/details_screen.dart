@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:news/features/home/data/model/news_model.dart';
+import 'package:news/features/home/domain/entities/news_model_entity.dart';
 
 import '../widgets/custom_container_image.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key, required this.article});
-final Articles article;
+final ArticlesEntity article;
   @override
   Widget build(BuildContext context) {
 
@@ -24,9 +24,9 @@ final Articles article;
             children: [
               CustomContainerImage(image: article.urlToImage,height: 250,),
               const SizedBox(height: 15,),
-              Text(article.title??"",style: Theme.of(context).textTheme.titleMedium,),
+              Text(article.title,style: Theme.of(context).textTheme.titleMedium,),
               const SizedBox(height: 15,),
-              Text(article.description??"",style: Theme.of(context).textTheme.titleMedium,),
+              Text(article.description,style: Theme.of(context).textTheme.titleMedium,),
           
             ],
           
